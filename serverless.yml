@@ -10,7 +10,7 @@ provider:
     role: arn:aws:iam::496585850746:role/LabRole
   environment:
     TABLE_NAME: ${sls:stage}-t_comentarios
-    INGEST_BUCKET: ${sls:stage}-bucket-ingesta-jr
+    INGEST_BUCKET: ${sls:stage}-bucket-ingesta-dc
 
 functions:
   crear:
@@ -43,6 +43,6 @@ resources:
     BucketIngesta:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: ${sls:stage}-bucket-ingesta-jr
+        BucketName: ${sls:stage}-bucket-ingesta-dc
         VersioningConfiguration:
           Status: Suspended
